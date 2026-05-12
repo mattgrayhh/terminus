@@ -14,7 +14,6 @@ module Terminus
         optional(:api_key).filled :string
         optional(:refresh_rate).filled :integer, gt?: 0
         optional(:image_timeout).filled :integer, gteq?: 0
-        optional(:proxy).filled :bool
         optional(:firmware_update).filled :bool
         optional(:firmware_version).filled Types::Version
         optional(:battery_charge).filled :float, gteq?: 0
@@ -26,7 +25,6 @@ module Terminus
         optional(:sleep_start_at).maybe :string
         optional(:sleep_stop_at).maybe :string
 
-        after(:value_coercer, &Coercers::DefaultToFalse.curry[:proxy])
         after(:value_coercer, &Coercers::DefaultToFalse.curry[:firmware_update])
       end
     end

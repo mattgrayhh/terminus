@@ -22,7 +22,6 @@ module Terminus
         wake_reason
         width
         height
-        proxy
         firmware_update
         sleep_start_at
         sleep_stop_at

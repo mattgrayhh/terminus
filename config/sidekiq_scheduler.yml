@@ -10,10 +10,6 @@ model_synchronizer:
   class: Terminus::Jobs::Synchronizers::Model
   cron: "0 0 */1 * *"
   description: "Synchronizes TRMNL models."
-screen_synchronizer:
-  class: Terminus::Jobs::Synchronizers::Screen
-  cron: "0/5 * * * *"
-  description: "Synchronizes TRMNL proxied device screen updates."
 sensor_synchronizer:
   class: Terminus::Jobs::Synchronizers::Sensor
   cron: "0/1 * * * *"

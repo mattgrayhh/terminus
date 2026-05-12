@@ -29,7 +29,6 @@ RSpec.describe Terminus::Serializers::Device do
       image_timeout: 5,
       width: 800,
       height: 480,
-      proxy: true,
       firmware_update: true,
       sleep_start_at: "05:00:00",
       sleep_stop_at: "10:00:00",

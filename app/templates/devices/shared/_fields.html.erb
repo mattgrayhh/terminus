@@ -118,19 +118,6 @@
     </label>
   <% end %>
 
-  <%= scope(:form_field, key: :proxy, errors:).render do %>
-    <%= form.check_box :proxy,
-                       id: :device_proxy,
-                       checked: field_for(:proxy, fields, device),
-                       switch: true,
-                       class: :checkbox %>
-
-    <label class="key" for="device_proxy">
-      Proxy
-      <%= render "shared/popovers/triggers/default", name: :proxy %>
-    </label>
-  <% end %>
-
   <%= scope(:form_field, key: :sleep_start_at, errors:).render do %>
     <label class="key" for="device_sleep_start_at">
       Sleep Start

@@ -40,7 +40,7 @@
       <dd class="value">The playlist ID. The current device playlist. Default: <code>nil</code>.</dd>
 
       <dt class="key">friendly_id</dt>
-      <dd class="value">The friendly ID. Should be identical to your Core account if you want device proxying support. Defaults to an uppercase six character hex value.</dd>
+      <dd class="value">The friendly ID. Defaults to an uppercase six character hex value.</dd>
 
       <dt class="key">api_key</dt>
       <dd class="value">The API Key. The unique API key for making API requests. Defaults to an auto-generated value when not supplied.</dd>
@@ -50,9 +50,6 @@
 
       <dt class="key">image_timeout</dt>
       <dd class="value">The image timeout in seconds. The maximum duration the device will wait before timing out for acquiring an image to display. Must be a positive number. Default: <code>0</code>.</dd>
-
-      <dt class="key">proxy</dt>
-      <dd class="value">Determines if the device should proxy images from the Core server. Default: <code>false</code>.</dd>
 
       <dt class="key">firmware_update</dt>
       <dd class="value">Determines if device should automatically update with stable Firmware releases. Default: <code>true</code>.</dd>
@@ -77,7 +74,6 @@
         "firmware_update": true,
         "refresh_rate": "500",
         "image_timeout": "0",
-        "proxy": true,
         "sleep_start_at": "00:00:00",
         "sleep_stop_at": "06:00:00"
       }

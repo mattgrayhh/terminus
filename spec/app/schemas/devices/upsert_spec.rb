@@ -16,7 +16,6 @@ RSpec.describe Terminus::Schemas::Devices::Upsert do
         api_key: "secret",
         refresh_rate: 100,
         image_timeout: 0,
-        proxy: "on",
         firmware_update: "on",
         firmware_version: "1.2.3",
         battery_charge: 85.0,
@@ -56,15 +55,6 @@ RSpec.describe Terminus::Schemas::Devices::Upsert do
       expect(contract.call(attributes).errors.to_h).to include(
         image_timeout: ["must be greater than or equal to 0"]
       )
-    end
-
-    it "answers true when proxy is truthy" do
-      expect(contract.call(attributes).to_h).to include(proxy: true)
-    end
-
-    it "answers false when proxy key is missing" do
-      attributes.delete :proxy
-      expect(contract.call(attributes).to_h).to include(proxy: false)
     end
 
     it "answers true when firmware update is truthy" do
