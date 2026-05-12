@@ -383,9 +383,6 @@ CREATE TABLE public.extension (
     description text,
     kind public.extension_kind_enum DEFAULT 'poll'::public.extension_kind_enum NOT NULL,
     tags text[] DEFAULT '{}'::text[] NOT NULL,
-    headers jsonb DEFAULT '{}'::jsonb NOT NULL,
-    verb public.extension_verb_enum DEFAULT 'get'::public.extension_verb_enum NOT NULL,
-    uris text[] DEFAULT '{}'::text[] NOT NULL,
     body jsonb DEFAULT '{}'::jsonb NOT NULL,
     fields jsonb DEFAULT '{}'::jsonb NOT NULL,
     template text,
@@ -1674,4 +1671,5 @@ INSERT INTO schema_migrations (filename) VALUES
 ('20260420112332_create_model_palette.rb'),
 ('20260421140616_remove_model_palette_names_column.rb'),
 ('20260508102145_add_device_synced_at_column.rb'),
-('20260512100558_remove_device_proxy_column.rb');
+('20260512100558_remove_device_proxy_column.rb'),
+('20260512102800_remove_extension_poll_columns.rb');
