@@ -274,7 +274,6 @@ CREATE TABLE public.device (
     height integer DEFAULT 0 CONSTRAINT devices_height_not_null NOT NULL,
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP CONSTRAINT devices_created_at_not_null NOT NULL,
     updated_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP CONSTRAINT devices_updated_at_not_null NOT NULL,
-    proxy boolean DEFAULT false CONSTRAINT devices_proxy_not_null NOT NULL,
     firmware_update boolean DEFAULT true CONSTRAINT devices_firmware_update_not_null NOT NULL,
     sleep_start_at time without time zone,
     sleep_stop_at time without time zone,
@@ -1674,4 +1673,5 @@ INSERT INTO schema_migrations (filename) VALUES
 ('20260420112319_add_model_palette_id.rb'),
 ('20260420112332_create_model_palette.rb'),
 ('20260421140616_remove_model_palette_names_column.rb'),
-('20260508102145_add_device_synced_at_column.rb');
+('20260508102145_add_device_synced_at_column.rb'),
+('20260512100558_remove_device_proxy_column.rb');
