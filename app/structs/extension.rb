@@ -21,7 +21,6 @@ module Terminus
           tags:,
           static_body:,
           fields:,
-          template:,
           data:,
           interval:,
           unit:,

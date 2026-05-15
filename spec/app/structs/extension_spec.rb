@@ -31,7 +31,6 @@ RSpec.describe Terminus::Structs::Extension do
         interval: 5,
         last_day_of_month: nil,
         start_at: "2025-01-02T03:04:05+00:00",
-        template: nil,
         unit: "minute"
       )
     end
