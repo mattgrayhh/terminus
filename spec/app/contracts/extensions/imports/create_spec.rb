@@ -30,7 +30,7 @@ RSpec.describe Terminus::Contracts::Extensions::Imports::Create do
       io.write "x" * 512_001
 
       expect(contract.call(attributes).errors.to_h).to eq(
-        extension: {attachment: ["must be less than 500 KB"]}
+        extension: {attachment: ["must be less than 500.0 KB"]}
       )
     end
   end

@@ -7,16 +7,7 @@ module Terminus
       class Update < Action
         include Deps[repository: "repositories.screen", model_repository: "repositories.model"]
 
-        params do
-          required(:id).filled :integer
-
-          required(:screen).filled(:hash) do
-            required(:model_id).filled :integer
-            required(:label).filled :string
-            required(:name).filled :string
-            optional(:image).filled :hash
-          end
-        end
+        contract Contracts::Screens::Update
 
         def handle request, response
           parameters = request.params

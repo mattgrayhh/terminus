@@ -12,14 +12,7 @@ module Terminus
           index_view: "views.screens.index"
         ]
 
-        params do
-          required(:screen).filled(:hash) do
-            required(:model_id).filled :integer
-            required(:label).filled :string
-            required(:name).filled :string
-            required(:image).filled :hash
-          end
-        end
+        contract Contracts::Screens::Create
 
         def handle request, response
           parameters = request.params

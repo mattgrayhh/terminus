@@ -12,11 +12,7 @@ module Terminus
             end
           end
 
-          rule extension: :attachment do
-            next if value[:tempfile].size <= 512_000
-
-            key.failure "must be less than 500 KB"
-          end
+          rule(extension: :attachment, &Rules::AttachmentSize)
         end
       end
     end
