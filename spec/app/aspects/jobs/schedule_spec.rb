@@ -17,7 +17,7 @@ RSpec.describe Terminus::Aspects::Jobs::Schedule do
 
       expect(sidekiq.get_all_schedules).to eq(
         "extension-test" => {
-          "cron" => "*/1 * * * * UTC",
+          "cron" => "*/1 * * * *",
           "class" => "Terminus::Jobs::Batches::Extension",
           "args" => [1],
           "description" => "The Test extension update schedule."

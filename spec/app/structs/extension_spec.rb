@@ -117,17 +117,17 @@ RSpec.describe Terminus::Structs::Extension do
 
   describe "#to_cron" do
     it "answers schedule when set" do
-      expect(extension.to_cron).to eq("*/5 * * * * UTC")
+      expect(extension.to_cron).to eq("*/5 * * * *")
     end
 
     it "answers schedule for multiple days in week" do
       extension = Factory.structs[:extension, unit: "week", days: %w[monday friday]]
-      expect(extension.to_cron).to eq("0 0 * * 1,5 UTC")
+      expect(extension.to_cron).to eq("0 0 * * 1,5")
     end
 
     it "answers schedule with last day of month" do
       extension = Factory.structs[:extension, interval: 5, unit: "month", last_day_of_month: true]
-      expect(extension.to_cron).to eq("0 0 L */5 * UTC")
+      expect(extension.to_cron).to eq("0 0 L */5 *")
     end
 
     it "answers empty string when there is no schedule" do
@@ -141,7 +141,7 @@ RSpec.describe Terminus::Structs::Extension do
         [
           "extension-test",
           {
-            cron: "*/5 * * * * UTC",
+            cron: "*/5 * * * *",
             class: "Terminus::Jobs::Batches::Extension",
             args: [1],
             description: "The Test extension update schedule."

@@ -12,7 +12,7 @@ module Terminus
 
       def call interval = nil, unit = "minute", time: Time.utc(2025, 1, 1, 0, 0, 0)
         case unit
-          when "minute" then for_minute interval, time
+          when "minute" then for_minute interval
           when "hour" then for_hour interval, time
           when "day" then for_day interval, time
           when "week" then for_week interval, time
@@ -22,49 +22,48 @@ module Terminus
         end
       end
 
-      def for_minute interval, time
-        zone = time.zone
-        interval ? "*/#{interval} * * * * #{zone}" : "* * * * * #{zone}"
+      def for_minute interval
+        interval ? "*/#{interval} * * * *" : "* * * * *"
       end
 
       def for_hour interval, time
-        _, minute, *, zone = time.to_a
+        _, minute, * = time.to_a
 
         case [interval, time]
-          in Integer, Time then "#{minute} */#{interval} * * * #{zone}"
-          else "#{minute} * * * * #{zone}"
+          in Integer, Time then "#{minute} */#{interval} * * *"
+          else "#{minute} * * * *"
         end
       end
 
       def for_day interval, time
-        _, minute, hour, *, zone = time.to_a
+        _, minute, hour, * = time.to_a
 
         case [interval, time]
-          in Integer, Time then "#{minute} #{hour} */#{interval} * * #{zone}"
-          else "#{minute} #{hour} * * * #{zone}"
+          in Integer, Time then "#{minute} #{hour} */#{interval} * *"
+          else "#{minute} #{hour} * * *"
         end
       end
 
       def for_week interval, time
-        _, minute, hour, *, zone = time.to_a
+        _, minute, hour, * = time.to_a
 
         case interval
-          in Integer then "#{minute} #{hour} * * #{interval} #{zone}"
-          in Array then %(#{minute} #{hour} * * #{interval.join ","} #{zone})
-          else "#{minute} #{hour} * * 0 #{zone}"
+          in Integer then "#{minute} #{hour} * * #{interval}"
+          in Array then %(#{minute} #{hour} * * #{interval.join ","})
+          else "#{minute} #{hour} * * 0"
         end
       end
 
       def for_month interval, time
-        _, minute, hour, *, zone = time.to_a
+        _, minute, hour, * = time.to_a
 
         case [interval, time]
-          in Integer, Time then "#{minute} #{hour} * */#{interval} * #{zone}"
+          in Integer, Time then "#{minute} #{hour} * */#{interval} *"
           in String, Time
             part, directive = interval.scan(/\d+|\D+/)
-            %(#{minute} #{hour} #{directive} */#{part} * #{zone})
-          in Array, Time then %(#{minute} 0 #{interval.join ","} * * #{zone})
-          else "#{minute} #{hour} 1 * * #{zone}"
+            %(#{minute} #{hour} #{directive} */#{part} *)
+          in Array, Time then %(#{minute} 0 #{interval.join ","} * *)
+          else "#{minute} #{hour} 1 * *"
         end
       end
 
