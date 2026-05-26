@@ -15,7 +15,7 @@ RSpec.describe Terminus::Aspects::Extensions::Renderer, :db do
       {
         "extension" => {
           "label" => "Test",
-          "css_classes" => "screen screen--#{model.name} screen--1bit screen--landscape screen--1x",
+          "css_classes" => "screen screen--#{model.name} screen--1bit screen--landscape",
           "fields" => [],
           "values" => {},
           "data" => {}

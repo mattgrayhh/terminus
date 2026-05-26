@@ -30,8 +30,7 @@ RSpec.describe Terminus::Aspects::Extensions::Contextualizer, :db do
           "data" => {"label" => "Test"},
           "fields" => [{"keyname" => "one", "default" => 1}],
           "values" => {"one" => 1},
-          "css_classes" => "screen screen--test screen--1bit screen--landscape " \
-                           "screen--lg screen--1x"
+          "css_classes" => "screen screen--test screen--1bit screen--landscape screen--lg"
         },
         "sensors" => [
           {

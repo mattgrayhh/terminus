@@ -17,8 +17,7 @@ RSpec.describe Terminus::Structs::Model do
   describe "#css_classes" do
     it "answers classes with full information" do
       expect(model.css_classes).to eq(
-        "screen screen--test screen--4bit screen--landscape screen--lg " \
-        "screen--1x screen--density-2x"
+        "screen screen--test screen--4bit screen--landscape screen--lg screen--density-2x"
       )
     end
 
@@ -26,16 +25,13 @@ RSpec.describe Terminus::Structs::Model do
       attributes.merge! name: nil, bit_depth: nil
 
       expect(model.css_classes).to eq(
-        "screen screen-- screen--bit screen--landscape screen--lg screen--1x screen--density-2x"
+        "screen screen-- screen--bit screen--landscape screen--lg screen--density-2x"
       )
     end
 
     it "answers classes without model classes" do
       attributes[:css].clear
-
-      expect(model.css_classes).to eq(
-        "screen screen--test screen--4bit screen--landscape screen--1x"
-      )
+      expect(model.css_classes).to eq("screen screen--test screen--4bit screen--landscape")
     end
   end
 
