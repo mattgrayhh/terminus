@@ -6,7 +6,7 @@ module Terminus
       module Gaffe
         # The new view.
         class New < View
-          config.layout = "gaffe"
+          config.layout = "interrupt"
 
           expose :message, decorate: false
         end

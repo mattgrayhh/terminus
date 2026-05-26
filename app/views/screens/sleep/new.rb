@@ -6,7 +6,7 @@ module Terminus
       module Sleep
         # The new view.
         class New < View
-          config.layout = "sleep"
+          config.layout = "interrupt"
         end
       end
     end

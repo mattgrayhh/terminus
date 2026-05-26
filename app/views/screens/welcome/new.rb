@@ -6,7 +6,7 @@ module Terminus
       module Welcome
         # The new view.
         class New < View
-          config.layout = "welcome"
+          config.layout = "interrupt"
 
           expose :device
         end
