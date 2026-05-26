@@ -17,7 +17,17 @@ RSpec.describe Terminus::Aspects::Extensions::Contextualizer, :db do
       ]
     end
 
-    let(:model) { Factory[:model, name: "test", css: {"classes" => {"size" => "screen--lg"}}] }
+    let :model do
+      Factory[
+        :model,
+        name: "test",
+        css: {
+          "classes" => {"size" => "screen--lg"},
+          "variables" => [%w[--screen-w 1040px], %w[--screen-h 780px]]
+        }
+      ]
+    end
+
     let(:device) { Factory[:device, model_id: model.id] }
     let(:sensor) { Factory[:device_sensor, device_id: device.id] }
 
@@ -32,6 +42,7 @@ RSpec.describe Terminus::Aspects::Extensions::Contextualizer, :db do
           "values" => {"one" => 1},
           "css_classes" => "screen screen--test screen--1bit screen--landscape screen--lg"
         },
+        "screen_variables" => "--screen-w: 1040px;\n--screen-h: 780px;",
         "sensors" => [
           {
             "device_id" => device.id,
@@ -58,6 +69,7 @@ RSpec.describe Terminus::Aspects::Extensions::Contextualizer, :db do
           "fields" => [],
           "values" => {}
         },
+        "screen_variables" => nil,
         "sensors" => []
       )
     end
