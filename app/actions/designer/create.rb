@@ -10,7 +10,7 @@ module Terminus
           "aspects.screens.upserter",
           model_repository: "repositories.model",
           screen_repository: "repositories.screen",
-          show_view: "views.designer.show"
+          view: "views.designer.show"
         ]
 
         using Refines::Actions::Response
@@ -31,7 +31,7 @@ module Terminus
           if htmx.request? request.env, :request, "true"
             render_text parameters[:template], response
           else
-            response.render show_view, id: Time.new.utc.to_i
+            response.render view, id: Time.new.utc.to_i
           end
         end
 
