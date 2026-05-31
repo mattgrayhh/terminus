@@ -15,9 +15,10 @@ module Terminus
             %i[req application],
             %i[keyreq pattern],
             headers: {
+              "Cache-Control" => "no-cache",
+              "Connection" => "keep-alive",
               "Content-Encoding" => "identity",
               "Content-Type" => "text/event-stream",
-              "Cache-Control" => "no-cache",
               "X-Accel-Buffering" => "no"
             },
             event_stream: EventStream
