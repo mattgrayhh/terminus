@@ -13,8 +13,10 @@ RSpec.describe Terminus::Schemas::Firmware::Header do
         HTTP_ACCESS_TOKEN: "abc123",
         HTTP_BATTERY_VOLTAGE: 4.74,
         HTTP_FW_VERSION: "1.2.3",
+        HTTP_HEIGHT: 480,
         HTTP_HOST: "https://localhost",
         HTTP_ID: "A1:B2:C3:D4:E5:F6",
+        HTTP_IMAGE_CACHED: false,
         HTTP_MODEL: "og",
         HTTP_PERCENT_CHARGED: 85.0,
         HTTP_REFRESH_RATE: 25,
@@ -22,9 +24,10 @@ RSpec.describe Terminus::Schemas::Firmware::Header do
         HTTP_SENSORS: "make=Sensirion;model=SCD41;kind=humidity;" \
                       "value=26;unit=percent;created_at=1735714800",
         HTTP_UPDATE_SOURCE: "Button pressed.",
+        HTTP_USB_CONNECTED: false,
         HTTP_USER_AGENT: "ESP32HTTPClient",
-        HTTP_WIDTH: 800,
-        HTTP_HEIGHT: 480
+        HTTP_WAKE_TIME: 20,
+        HTTP_WIDTH: 800
       )
     end
   end

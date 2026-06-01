@@ -13,13 +13,16 @@ module Terminus
           HTTP_HEIGHT: :height,
           HTTP_HOST: :host,
           HTTP_ID: :mac_address,
+          HTTP_IMAGE_CACHED: :image_cached,
           HTTP_MODEL: :model_name,
           HTTP_PERCENT_CHARGED: :battery_charge,
           HTTP_REFRESH_RATE: :refresh_rate,
           HTTP_RSSI: :wifi,
           HTTP_SENSORS: :sensors,
           HTTP_UPDATE_SOURCE: :wake_reason,
+          HTTP_USB_CONNECTED: :charging,
           HTTP_USER_AGENT: :user_agent,
+          HTTP_WAKE_TIME: :wake_duration,
           HTTP_WIDTH: :width
         }.freeze
 
@@ -40,11 +43,14 @@ module Terminus
             {
               battery_charge:,
               battery_voltage:,
+              charging:,
               firmware_version: firmware_version.to_s,
+              height:,
+              image_cached:,
+              wake_duration:,
               wake_reason:,
-              wifi:,
               width:,
-              height:
+              wifi:
             }.compress
           end
         end

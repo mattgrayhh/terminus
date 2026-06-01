@@ -11,13 +11,16 @@ module Terminus
         optional(:HTTP_HEIGHT).filled :integer
         optional(:HTTP_HOST).filled :string
         required(:HTTP_ID).filled Types::MACAddress
+        optional(:HTTP_IMAGE_CACHED).filled :bool
         optional(:HTTP_MODEL).filled :string
         optional(:HTTP_PERCENT_CHARGED).filled :float
         optional(:HTTP_REFRESH_RATE).filled :integer
         optional(:HTTP_RSSI).filled :integer
         optional(:HTTP_SENSORS).maybe :string
         optional(:HTTP_UPDATE_SOURCE).filled :string
+        optional(:HTTP_USB_CONNECTED).filled :bool
         optional(:HTTP_USER_AGENT).filled :string
+        optional(:HTTP_WAKE_TIME).filled :integer
         optional(:HTTP_WIDTH).filled :integer
       end
     end

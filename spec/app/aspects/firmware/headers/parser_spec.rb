@@ -37,19 +37,22 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Parser do
     it "answers header record when success" do
       expect(parser.call(firmware_headers)).to be_success(
         Terminus::Aspects::Firmware::Headers::Model[
-          host: "https://localhost",
-          user_agent: "ESP32HTTPClient",
-          mac_address: "A1:B2:C3:D4:E5:F6",
-          model_name: "og_plus",
           api_key: "abc123",
-          refresh_rate: 25,
           battery_charge: 85.0,
           battery_voltage: 4.74,
+          charging: false,
           firmware_version: "1.2.3",
-          wake_reason: "Button pressed.",
-          wifi: -54,
-          width: 800,
           height: 480,
+          host: "https://localhost",
+          image_cached: false,
+          mac_address: "A1:B2:C3:D4:E5:F6",
+          model_name: "og_plus",
+          refresh_rate: 25,
+          user_agent: "ESP32HTTPClient",
+          wake_duration: 20,
+          wake_reason: "Button pressed.",
+          width: 800,
+          wifi: -54,
           sensors: [
             {
               make: "Sensirion",
