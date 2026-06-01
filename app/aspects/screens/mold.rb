@@ -41,6 +41,8 @@ module Terminus
 
         def image_attributes = {model_id:, name:, label:}
 
+        def log_attributes = to_h.merge content: "<redacted>"
+
         def rotatable? = !rotation.zero?
 
         def viewport = {width:, height:}

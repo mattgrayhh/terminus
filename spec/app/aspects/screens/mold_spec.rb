@@ -113,6 +113,30 @@ RSpec.describe Terminus::Aspects::Screens::Mold do
     end
   end
 
+  describe "#log_attributes" do
+    it "answers taggable log attributes with redacted content" do
+      expect(mold.log_attributes).to eq(
+        bit_depth: 4,
+        color_codes: nil,
+        colors: nil,
+        content: "<redacted>",
+        grays: nil,
+        height: 480,
+        input_path: nil,
+        label: "Test",
+        mime_type: "image/png",
+        mode: nil,
+        model_id: 1,
+        name: "test",
+        offset_x: 0,
+        offset_y: 0,
+        output_path: nil,
+        rotation: 0,
+        width: 800
+      )
+    end
+  end
+
   describe "#rotatable?" do
     it "answers true when rotation is positive" do
       expect(mold.with(rotation: 90).rotatable?).to be(true)
