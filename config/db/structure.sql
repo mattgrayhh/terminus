@@ -281,7 +281,10 @@ CREATE TABLE public.device (
     playlist_id integer,
     battery_charge double precision DEFAULT 0 NOT NULL,
     wake_reason text,
-    synced_at timestamp without time zone
+    synced_at timestamp without time zone,
+    charging boolean DEFAULT false NOT NULL,
+    image_cached boolean DEFAULT false NOT NULL,
+    wake_duration integer DEFAULT 0 NOT NULL
 );
 
 
@@ -1673,4 +1676,5 @@ INSERT INTO schema_migrations (filename) VALUES
 ('20260508102145_add_device_synced_at_column.rb'),
 ('20260512100558_remove_device_proxy_column.rb'),
 ('20260512102800_remove_extension_poll_columns.rb'),
-('20260512110409_rename_extension_body_column.rb');
+('20260512110409_rename_extension_body_column.rb'),
+('20260601143521_add_device_columns.rb');
