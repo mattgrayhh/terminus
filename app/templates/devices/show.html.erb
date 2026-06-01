@@ -73,6 +73,12 @@
         </dt>
         <dd class="value"><%= device.image_timeout %></dd>
 
+        <dt class="key">
+          Image Cached
+          <%= render "shared/popovers/triggers/default", name: :image_cached %>
+        </dt>
+        <dd class="value"><%= boolean device.image_cached %></dd>
+
         <dt class="key">Dimensions</dt>
         <dd class="value"><%= device.dimensions %></dd>
 
@@ -90,6 +96,12 @@
           <%= render "shared/popovers/triggers/default", name: :wake_reason %>
         </dt>
         <dd class="value"><%= device.wake_description %></dd>
+
+        <dt class="key">
+          Wake Duration
+          <%= render "shared/popovers/triggers/default", name: :wake_duration %>
+        </dt>
+        <dd class="value"><%= device.wake_duration %> seconds</dd>
 
         <dt class="key">
           Sleep Start
