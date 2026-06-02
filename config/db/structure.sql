@@ -284,7 +284,11 @@ CREATE TABLE public.device (
     synced_at timestamp without time zone,
     charging boolean DEFAULT false NOT NULL,
     image_cached boolean DEFAULT false NOT NULL,
-    wake_duration integer DEFAULT 0 NOT NULL
+    wake_duration integer DEFAULT 0 NOT NULL,
+    display_compatibility boolean DEFAULT false NOT NULL,
+    display_profile text DEFAULT 'default'::text NOT NULL,
+    firmware_profile boolean DEFAULT false NOT NULL,
+    touch_bar text DEFAULT 'tap'::text NOT NULL
 );
 
 
@@ -1677,4 +1681,5 @@ INSERT INTO schema_migrations (filename) VALUES
 ('20260512100558_remove_device_proxy_column.rb'),
 ('20260512102800_remove_extension_poll_columns.rb'),
 ('20260512110409_rename_extension_body_column.rb'),
-('20260601143521_add_device_columns.rb');
+('20260601143521_add_device_columns.rb'),
+('20260602112926_add_device_profile_and_compatibility_columns.rb');
