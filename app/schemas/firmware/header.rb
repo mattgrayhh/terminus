@@ -17,9 +17,9 @@ module Terminus
         optional(:HTTP_REFRESH_RATE).filled :integer
         optional(:HTTP_RSSI).filled :integer
         optional(:HTTP_SENSORS).maybe :string
+        optional(:HTTP_TEMPERATURE_PROFILE).filled :bool
         optional(:HTTP_UPDATE_SOURCE).filled :string
         optional(:HTTP_USB_CONNECTED).filled :bool
-        optional(:HTTP_USER_AGENT).filled :string
         optional(:HTTP_WAKE_TIME).filled :integer
         optional(:HTTP_WIDTH).filled :integer
       end

@@ -13,6 +13,7 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Model do
       battery_charge: 85.0,
       battery_voltage: 4.74,
       charging: false,
+      firmware_profile: true,
       firmware_version: Version("1.2.3"),
       height: 480,
       host: "https://localhost",
@@ -50,6 +51,7 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Model do
           refresh_rate: "25",
           sensors: "make=Sensirion;model=SCD41;kind=humidity;value=26;" \
                    "unit=percent;created_at=1735714800",
+          firmware_profile: true,
           user_agent: "ESP32HTTPClient",
           wake_duration: 20,
           wake_reason: "Button pressed.",
@@ -72,6 +74,7 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Model do
         battery_charge: 85.0,
         battery_voltage: 4.74,
         charging: false,
+        firmware_profile: true,
         firmware_version: "1.2.3",
         height: 480,
         image_cached: false,

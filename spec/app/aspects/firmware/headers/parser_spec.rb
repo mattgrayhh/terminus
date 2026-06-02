@@ -24,7 +24,6 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Parser do
         HTTP_RSSI.+
         HTTP_SENSORS.+
         HTTP_UPDATE_SOURCE.+
-        HTTP_USER_AGENT.+
         HTTP_WIDTH.+
       /x
     end
@@ -41,6 +40,7 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Parser do
           battery_charge: 85.0,
           battery_voltage: 4.74,
           charging: false,
+          firmware_profile: true,
           firmware_version: "1.2.3",
           height: 480,
           host: "https://localhost",
@@ -48,7 +48,6 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Parser do
           mac_address: "A1:B2:C3:D4:E5:F6",
           model_name: "og_plus",
           refresh_rate: 25,
-          user_agent: "ESP32HTTPClient",
           wake_duration: 20,
           wake_reason: "Button pressed.",
           width: 800,
