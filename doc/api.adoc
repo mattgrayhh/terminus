@@ -73,14 +73,17 @@ The following is an example of the response sent back to the device which also h
 [source,json]
 ----
 {
-  "filename": "demo.bmp",
-  "firmware_url": "http://localhost:2443/assets/firmware/1.4.8.bin",
-  "firmware_version": "1.4.8",
-  "image_url": "https://localhost:2443/assets/screens/A1B2C3D4E5F6/demo.bmp",
+  "filename": "demo.png",
+  "firmware_url": null,
+  "firmware_version": null,
+  "image_url": "http://192.168.0.13:2300/uploads/66584f02f7d0477b0b549efd234296e6.png",
   "image_url_timeout": 0,
-  "refresh_rate": 130,
+  "maximum_compatibility": false,
+  "refresh_rate": 900,
   "reset_firmware": false,
   "special_function": "sleep",
+  "temperature_profile": "default",
+  "touchbar_mode": "tap",
   "update_firmware": false
 }
 ----
