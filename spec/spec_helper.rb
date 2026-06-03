@@ -39,7 +39,7 @@ require "warning"
 SPEC_ROOT = Pathname(__dir__).realpath.freeze
 
 POORLY_MAINTAINED_GEMS = /
-  shrine                         # No longer maintained. We are working on a new solution.
+  http.cookie
 /x
 
 using Refinements::Pathname
@@ -48,7 +48,7 @@ Pathname.require_tree SPEC_ROOT.join("support/matchers")
 Pathname.require_tree SPEC_ROOT.join("support/shared_examples")
 Pathname.require_tree SPEC_ROOT.join("support/shared_contexts")
 
-Gem.path.each { |path| Warning.ignore POORLY_MAINTAINED_GEMS, path }
+Warning.ignore POORLY_MAINTAINED_GEMS
 
 RSpec.configure do |config|
   config.color = true
