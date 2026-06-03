@@ -26,9 +26,12 @@ RSpec.describe "/api/display", :db do
       firmware_version: "0.0.0",
       image_url: %r(memory://\h{32}\.png),
       image_url_timeout: 0,
+      maximum_compatibility: false,
       refresh_rate: 900,
       reset_firmware: false,
       special_function: "sleep",
+      temperature_profile: "default",
+      touchbar_mode: "tap",
       update_firmware: true
     )
   end
@@ -44,9 +47,12 @@ RSpec.describe "/api/display", :db do
       firmware_version: "0.0.0",
       image_url: %r(memory://\h{32}\.png),
       image_url_timeout: 10,
+      maximum_compatibility: false,
       refresh_rate: 20,
       reset_firmware: false,
       special_function: "sleep",
+      temperature_profile: "default",
+      touchbar_mode: "tap",
       update_firmware: true
     )
   end
@@ -62,9 +68,12 @@ RSpec.describe "/api/display", :db do
       firmware_version: nil,
       image_url: %r(memory://\h{32}\.png),
       image_url_timeout: 0,
+      maximum_compatibility: false,
       refresh_rate: 900,
       reset_firmware: false,
       special_function: "sleep",
+      temperature_profile: "default",
+      touchbar_mode: "tap",
       update_firmware: true
     )
   end
@@ -79,9 +88,12 @@ RSpec.describe "/api/display", :db do
       firmware_version: nil,
       image_url: %r(memory://\h{32}\.png),
       image_url_timeout: 0,
+      maximum_compatibility: false,
       refresh_rate: 900,
       reset_firmware: false,
       special_function: "sleep",
+      temperature_profile: "default",
+      touchbar_mode: "tap",
       update_firmware: true
     )
   end
@@ -138,9 +150,12 @@ RSpec.describe "/api/display", :db do
         firmware_version: nil,
         image_url: %r(memory://\h{32}\.png),
         image_url_timeout: 0,
+        maximum_compatibility: false,
         refresh_rate: 900,
         reset_firmware: false,
         special_function: "sleep",
+        temperature_profile: "default",
+        touchbar_mode: "tap",
         update_firmware: true
       )
     end
