@@ -24,7 +24,8 @@ module Terminus
           HTTP_USB_CONNECTED: :charging,
           HTTP_USER_AGENT: :user_agent,
           HTTP_WAKE_TIME: :wake_duration,
-          HTTP_WIDTH: :width
+          HTTP_WIDTH: :width,
+          HTTP_WIFI_BAND: :wifi_band
         }.freeze
 
         # Models the HTTP headers for quick access to attributes.
@@ -52,6 +53,7 @@ module Terminus
               wake_duration:,
               wake_reason:,
               width:,
+              wifi_band:,
               wifi_signal:
             }.compress
           end

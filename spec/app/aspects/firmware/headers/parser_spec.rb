@@ -51,6 +51,7 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Parser do
           wake_duration: 20,
           wake_reason: "Button pressed.",
           width: 800,
+          wifi_band: 2.4,
           wifi_signal: -54,
           sensors: [
             {

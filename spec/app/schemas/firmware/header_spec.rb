@@ -27,6 +27,7 @@ RSpec.describe Terminus::Schemas::Firmware::Header do
         HTTP_UPDATE_SOURCE: "Button pressed.",
         HTTP_USB_CONNECTED: false,
         HTTP_WAKE_TIME: 20,
+        HTTP_WIFI_BAND: 2.4,
         HTTP_WIDTH: 800
       )
     end

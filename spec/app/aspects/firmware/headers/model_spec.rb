@@ -26,6 +26,7 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Model do
       wake_duration: 20,
       wake_reason: "Button pressed.",
       width: 800,
+      wifi_band: 2.4,
       wifi_signal: -40
     ]
   end
@@ -41,21 +42,22 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Model do
           api_key: "abc123",
           battery_charge: "85",
           battery_voltage: "4.74",
-          charging: false,
+          charging: "false",
           firmware_version: "1.2.3",
           height: "480",
           host: "https://localhost",
-          image_cached: false,
+          image_cached: "false",
           mac_address: "A1:B2:C3:D4:E5:F6",
           model_name: "og",
           refresh_rate: "25",
           sensors: "make=Sensirion;model=SCD41;kind=humidity;value=26;" \
                    "unit=percent;created_at=1735714800",
-          firmware_profile: true,
+          firmware_profile: "true",
           user_agent: "ESP32HTTPClient",
-          wake_duration: 20,
+          wake_duration: "20",
           wake_reason: "Button pressed.",
           width: "800",
+          wifi_band: "2.4",
           wifi_signal: "-54"
         ]
       )
@@ -81,6 +83,7 @@ RSpec.describe Terminus::Aspects::Firmware::Headers::Model do
         wake_duration: 20,
         wake_reason: "Button pressed.",
         width: 800,
+        wifi_band: 2.4,
         wifi_signal: -40
       )
     end

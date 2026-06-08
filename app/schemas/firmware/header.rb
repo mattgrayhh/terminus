@@ -22,6 +22,7 @@ module Terminus
         optional(:HTTP_USB_CONNECTED).filled :bool
         optional(:HTTP_WAKE_TIME).filled :integer
         optional(:HTTP_WIDTH).filled :integer
+        optional(:HTTP_WIFI_BAND).filled :float
       end
     end
   end
