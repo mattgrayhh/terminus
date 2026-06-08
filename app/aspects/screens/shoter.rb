@@ -37,16 +37,16 @@ module Terminus
 
         def save content, viewport, output_path
           instance = browser.new settings
+          page = instance.create_page
 
           Pathname.mktmpdir do |work_dir|
-            instance.create_page
-            instance.set_viewport(**viewport)
-            instance.main_frame.content = work_dir.join("content.html").write(content).read
-            instance.network.wait_for_idle duration: 1
-            instance.screenshot path: output_path.to_s
-            instance.quit
+            page.content = work_dir.join("content.html").write(content).read
+            page.set_viewport(**viewport)
+            page.network.wait_for_idle duration: 5
+            page.screenshot path: output_path.to_s
           end
 
+          instance.quit
           Success output_path
         rescue Ferrum::BrowserError => error then handle_browser_error instance, error
         rescue Ferrum::DeadBrowserError => error then handle_dead_browser_error error
