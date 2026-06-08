@@ -266,7 +266,7 @@ CREATE TABLE public.device (
     mac_address text,
     api_key text,
     firmware_version text,
-    wifi integer DEFAULT 0 CONSTRAINT devices_wifi_not_null NOT NULL,
+    wifi_signal integer DEFAULT 0 CONSTRAINT devices_wifi_not_null NOT NULL,
     battery_voltage double precision DEFAULT 0 CONSTRAINT devices_battery_not_null NOT NULL,
     refresh_rate integer DEFAULT 900 CONSTRAINT devices_refresh_rate_not_null NOT NULL,
     image_timeout integer DEFAULT 0 CONSTRAINT devices_image_timeout_not_null NOT NULL,
@@ -288,7 +288,8 @@ CREATE TABLE public.device (
     display_compatibility boolean DEFAULT false NOT NULL,
     display_profile text DEFAULT 'default'::text NOT NULL,
     firmware_profile boolean DEFAULT false NOT NULL,
-    touch_bar text DEFAULT 'tap'::text NOT NULL
+    touch_bar text DEFAULT 'tap'::text NOT NULL,
+    wifi_band double precision DEFAULT 0 NOT NULL
 );
 
 
@@ -1682,4 +1683,5 @@ INSERT INTO schema_migrations (filename) VALUES
 ('20260512102800_remove_extension_poll_columns.rb'),
 ('20260512110409_rename_extension_body_column.rb'),
 ('20260601143521_add_device_columns.rb'),
-('20260602112926_add_device_profile_and_compatibility_columns.rb');
+('20260602112926_add_device_profile_and_compatibility_columns.rb'),
+('20260608161124_add_device_wifi_band_column.rb');
