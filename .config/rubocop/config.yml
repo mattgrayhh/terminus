@@ -46,9 +46,7 @@ RSpec/ExampleLength:
     - "spec/features/**/*"
 RSpec/SpecFilePathFormat:
   CustomTransform:
-    Terminus: app
-  Exclude:
-  - spec/lib/**/*
+    Terminus: ""
 Style/IpAddresses:
   Exclude:
     - spec/**/*
