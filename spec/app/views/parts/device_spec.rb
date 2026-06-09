@@ -41,6 +41,17 @@ RSpec.describe Terminus::Views::Parts::Device, :db do
     end
   end
 
+  describe "#battery_measurement_label" do
+    it "answers only percentage when not charging" do
+      expect(part.battery_measurement_label).to eq("Battery (70%)")
+    end
+
+    it "answers charging when charging" do
+      allow(device).to receive(:charging).and_return(true)
+      expect(part.battery_measurement_label).to eq("Charging")
+    end
+  end
+
   describe "#battery_percentage" do
     it "answers percentage when charge is positive" do
       allow(device).to receive(:battery_charge).and_return(85)
@@ -148,6 +159,17 @@ RSpec.describe Terminus::Views::Parts::Device, :db do
     it "answers description when present" do
       allow(device).to receive(:wake_reason).and_return("Woken from test.")
       expect(part.wake_description).to eq("Woken from test.")
+    end
+  end
+
+  describe "#wifi_measurement_label" do
+    it "answers only signal strength when band is zero" do
+      expect(part.wifi_measurement_label).to eq("WiFi (90%)")
+    end
+
+    it "answers band and signal when band is positive" do
+      allow(device).to receive(:wifi_band).and_return(2.4)
+      expect(part.wifi_measurement_label).to eq("2.4 GHz (90%)")
     end
   end
 

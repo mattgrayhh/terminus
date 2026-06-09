@@ -12,6 +12,12 @@ module Terminus
 
         using Refinements::Struct
 
+        def battery_measurement_label
+          return "Charging" if charging
+
+          "Battery (#{helpers.format_number battery_percentage, precision: 0}%)"
+        end
+
         def battery_percentage
           battery_charge.positive? ? battery_charge : battery_voltage_to_percent
         end
@@ -21,6 +27,11 @@ module Terminus
         def formatted_touch_bar = touch_bar.capitalize
 
         def wake_description = String(wake_reason).empty? ? "Unknown." : wake_reason
+
+        def wifi_measurement_label
+          band = wifi_band
+          band.zero? ? "WiFi (#{wifi_percentage}%)" : "#{band} GHz (#{wifi_percentage}%)"
+        end
 
         def wifi_percentage
           case wifi_signal
