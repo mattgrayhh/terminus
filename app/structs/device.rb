@@ -41,9 +41,11 @@ module Terminus
 
       def screen_attributes kind
         {
+          device_id: id,
           model_id:,
+          label: screen_label(kind.capitalize),
           name: screen_name(kind),
-          label: screen_label(kind.capitalize)
+          kind:
         }
       end
     end

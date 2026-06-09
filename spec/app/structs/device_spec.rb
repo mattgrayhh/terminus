@@ -73,22 +73,24 @@ RSpec.describe Terminus::Structs::Device, :db do
 
   describe "#screen_label" do
     it "answers label with prefix" do
-      expect(device.screen_label("Test")).to eq("Test #{device.id}")
+      expect(device.screen_label("Welcome")).to eq("Welcome #{device.id}")
     end
   end
 
   describe "#screen_name" do
     it "answers name with kind" do
-      expect(device.screen_name("test")).to eq("test_#{device.id}")
+      expect(device.screen_name("welcome")).to eq("welcome_#{device.id}")
     end
   end
 
   describe "#screen_attributes" do
     it "answers attributes" do
-      expect(device.screen_attributes("test")).to eq(
+      expect(device.screen_attributes("welcome")).to eq(
+        device_id: device.id,
         model_id: device.model_id,
-        label: "Test #{device.id}",
-        name: "test_#{device.id}"
+        label: "Welcome #{device.id}",
+        name: "welcome_#{device.id}",
+        kind: "welcome"
       )
     end
   end
