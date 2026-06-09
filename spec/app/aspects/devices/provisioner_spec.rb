@@ -39,8 +39,8 @@ RSpec.describe Terminus::Aspects::Devices::Provisioner, :db do
         playlist = Terminus::Repositories::Playlist.new.find device.playlist_id
 
         expect(playlist).to have_attributes(
-          label: "Device #{device.friendly_id}",
-          name: "device_#{device.friendly_id.downcase}"
+          label: "Device #{device.id}",
+          name: "device_#{device.id}"
         )
       end
 
@@ -51,8 +51,8 @@ RSpec.describe Terminus::Aspects::Devices::Provisioner, :db do
 
         expect(screen).to have_attributes(
           model_id: model.id,
-          label: "Welcome #{device.friendly_id}",
-          name: "terminus_welcome_#{device.friendly_id.downcase}"
+          label: "Welcome #{device.id}",
+          name: "welcome_#{device.id}"
         )
       end
 
@@ -62,8 +62,8 @@ RSpec.describe Terminus::Aspects::Devices::Provisioner, :db do
         screen = Terminus::Repositories::Screen.new.find playlist.current_item.screen_id
 
         expect(screen).to have_attributes(
-          label: "Welcome #{device.friendly_id}",
-          name: "terminus_welcome_#{device.friendly_id.downcase}"
+          label: "Welcome #{device.id}",
+          name: "welcome_#{device.id}"
         )
       end
 

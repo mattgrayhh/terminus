@@ -6,17 +6,17 @@ RSpec.describe Terminus::Aspects::Screens::Gaffer, :db do
   subject(:gaffer) { described_class.new }
 
   describe "#call" do
-    let(:device) { Factory[:device, model_id: model.id, friendly_id: "ABC123"] }
+    let(:device) { Factory[:device, model_id: model.id] }
     let(:model) { Factory[:model] }
     let(:message) { "Danger!" }
 
     it "answers new screen when not found" do
       expect(gaffer.call(device, message).success).to have_attributes(
-        label: "Error ABC123",
-        name: "terminus_error_abc123",
+        label: "Error #{device.id}",
+        name: "error_#{device.id}",
         image_attributes: hash_including(
           metadata: hash_including(
-            filename: "terminus_error_abc123.png",
+            filename: "error_#{device.id}.png",
             mime_type: "image/png",
             width: 800,
             height: 480
@@ -29,16 +29,16 @@ RSpec.describe Terminus::Aspects::Screens::Gaffer, :db do
       Factory[
         :screen,
         model_id: device.model_id,
-        label: "Error ABC123",
-        name: "terminus_error_abc123"
+        label: "Error #{device.id}",
+        name: "error_#{device.id}"
       ]
 
       expect(gaffer.call(device, message).success).to have_attributes(
-        label: "Error ABC123",
-        name: "terminus_error_abc123",
+        label: "Error #{device.id}",
+        name: "error_#{device.id}",
         image_attributes: hash_including(
           metadata: hash_including(
-            filename: "terminus_error_abc123.png",
+            filename: "error_#{device.id}.png",
             mime_type: "image/png",
             width: 800,
             height: 480

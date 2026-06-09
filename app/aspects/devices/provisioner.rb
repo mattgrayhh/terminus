@@ -57,8 +57,8 @@ module Terminus
         end
 
         def create_playlist_id device
-          id = device.friendly_id
-          playlist = playlist_repository.create label: "Device #{id}", name: "device_#{id.downcase}"
+          id = device.id
+          playlist = playlist_repository.create label: "Device #{id}", name: "device_#{id}"
 
           playlist.id
         end

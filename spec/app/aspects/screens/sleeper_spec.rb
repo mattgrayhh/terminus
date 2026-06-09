@@ -6,31 +6,33 @@ RSpec.describe Terminus::Aspects::Screens::Sleeper, :db do
   subject(:sleeper) { described_class.new }
 
   describe "#call" do
-    let(:device) { Factory[:device, model_id: model.id, friendly_id: "ABC123"] }
+    let(:device) { Factory[:device, model_id: model.id] }
     let(:model) { Factory[:model] }
 
     it "answers existing screen when found" do
       screen = Factory[
         :screen,
         model_id: model.id,
-        name: "terminus_sleep_abc123",
-        label: "Sleep ABC123"
+        device_id: device.id,
+        label: "Sleep #{device.id}",
+        name: "sleep_#{device.id}",
+        kind: "sleep"
       ]
 
       expect(sleeper.call(device).success).to have_attributes(
         id: screen.id,
-        label: "Sleep ABC123",
-        name: "terminus_sleep_abc123"
+        label: "Sleep #{device.id}",
+        name: "sleep_#{device.id}"
       )
     end
 
     it "answers new screen when not found" do
       expect(sleeper.call(device).success).to have_attributes(
-        label: "Sleep ABC123",
-        name: "terminus_sleep_abc123",
+        label: "Sleep #{device.id}",
+        name: "sleep_#{device.id}",
         image_attributes: hash_including(
           metadata: hash_including(
-            filename: "terminus_sleep_abc123.png",
+            filename: "sleep_#{device.id}.png",
             mime_type: "image/png",
             width: 800,
             height: 480
