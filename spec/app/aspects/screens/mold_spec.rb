@@ -8,8 +8,9 @@ RSpec.describe Terminus::Aspects::Screens::Mold do
   subject :mold do
     described_class[
       model_id: 1,
-      name: "test",
+      device_id: 2,
       label: "Test",
+      name: "test",
       content: "test",
       mime_type: "image/png",
       bit_depth: 4,
@@ -21,7 +22,11 @@ RSpec.describe Terminus::Aspects::Screens::Mold do
     ]
   end
 
-  let(:model) { Factory.structs[:model, bit_depth: 1, colors: 2] }
+  describe "#initialize" do
+    it "answers" do
+      expect(described_class.new).to eq(described_class[kind: "general"])
+    end
+  end
 
   describe "#color?" do
     it "answers true with dither mode, positive bit depth, and color codes" do
@@ -109,7 +114,13 @@ RSpec.describe Terminus::Aspects::Screens::Mold do
 
   describe "#image_attributes" do
     it "answers image attributes for screen attachments" do
-      expect(mold.image_attributes).to eq(model_id: 1, label: "Test", name: "test")
+      expect(mold.image_attributes).to eq(
+        model_id: 1,
+        device_id: 2,
+        label: "Test",
+        name: "test",
+        kind: "general"
+      )
     end
   end
 
@@ -120,9 +131,11 @@ RSpec.describe Terminus::Aspects::Screens::Mold do
         color_codes: nil,
         colors: nil,
         content: "<redacted>",
+        device_id: 2,
         grays: nil,
         height: 480,
         input_path: nil,
+        kind: "general",
         label: "Test",
         mime_type: "image/png",
         mode: nil,

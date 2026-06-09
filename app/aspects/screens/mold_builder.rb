@@ -18,7 +18,7 @@ module Terminus
         def call model_id: nil, device_id: nil, **attributes
           finder.call(model_id:, device_id:)
                 .fmap { |model| palette_attributes_for model }
-                .fmap { |model, palette| build model, palette, attributes }
+                .fmap { |model, palette| build model, palette, device_id:, **attributes }
                 .fmap { log_debug it }
         end
 
@@ -31,11 +31,12 @@ module Terminus
           [model, attributes]
         end
 
-        def build model, palette_attributes, attributes
+        def build model, palette_attributes, **attributes
           allowed_keys = mold.members
 
+          # Order matters.
           mold.new(
-            **model.to_h.transform_keys!(id: :model_id).slice(*allowed_keys),
+            **model.to_h.transform_keys!(id: :model_id).slice(*allowed_keys).except(:kind),
             **palette_attributes,
             **attributes.slice(*allowed_keys)
           )
