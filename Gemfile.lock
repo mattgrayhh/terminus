@@ -172,7 +172,7 @@ GEM
       et-orbi (~> 1.4)
       raabro (~> 1.4)
     functionable (1.2.0)
-    git-lint (11.0.0)
+    git-lint (11.0.1)
       cogger (~> 2.3)
       containable (~> 2.3)
       core (~> 3.0)
@@ -388,7 +388,7 @@ GEM
     rexml (3.4.4)
     roda (3.104.0)
       rack
-    rodauth (2.43.0)
+    rodauth (2.44.0)
       roda (>= 2.6.0)
       sequel (>= 4)
     rom (5.4.3)
@@ -670,6 +670,7 @@ CHECKSUMS
   better_errors (2.10.1) sha256=f798f1bac93f3e775925b7fcb24cffbcf0bb62ee2210f5350f161a6b75fc0a73
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   binding_of_caller (1.0.1) sha256=2b2902abff4246ddcfbc4da9b69bc4a019e22aeb300c2ff6289a173d4b90b29a
+  bundler (4.0.13) sha256=19f08be7f27022cf0b89f27da0b044ae075e8270a9ef44ad248a932614e1ca3b
   caliber (0.93.0) sha256=615e8ab0be24b284aeada4f294b61a0f90dbea38db8fa981431c2d5d4721bb0b
   capybara (3.40.0) sha256=42dba720578ea1ca65fd7a41d163dd368502c191804558f6e0f71b391054aeef
   capybara-validate_html5 (2.1.0) sha256=9c5bcac8058f05c8468c0856ccfbf91478e24c7ff07c79b8ac7c64ba9291cf5a
@@ -724,7 +725,7 @@ CHECKSUMS
   fiber-storage (1.0.1) sha256=f48e5b6d8b0be96dac486332b55cee82240057065dc761c1ea692b2e719240e1
   fugit (1.12.2) sha256=643f2bf28db263bd400cbf8e0dd8b76b2c9b94bdb130e12d2394de04d9c20e5e
   functionable (1.2.0) sha256=76e9ddd98994b61dfef6cf3d9366eb4202101abed562363f6c30500fd62668da
-  git-lint (11.0.0) sha256=84582ef7e5e40e0f73dbd23bdd7b9555ac6d7ad97f838464f7b9ee0ddb534b4e
+  git-lint (11.0.1) sha256=4097ae4d66c4f8a30a9a0bcfbaff7d9ccdb525b3cd332223b5dd6ee0daec0e9b
   gitt (5.3.0) sha256=f084d19d00b61231aaba2f2f85c063b10a96da1f7e48f4233cef09e9048e4a43
   hanami (2.3.2) sha256=2f1e7e10d760bd0c3929bcb55a42f38281bd5da507e40b98e62282f52f452e3b
   hanami-assets (2.3.0) sha256=c396bb735833458d0ceda013f498154eccafcae50c36db7f27cdd50f0560223d
@@ -807,7 +808,7 @@ CHECKSUMS
   repl_type_completor (0.1.15) sha256=dec24c45fffefa3b55b19115fee20b3446c2f75c7605f579ab6047e931edd335
   rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142
   roda (3.104.0) sha256=1b1e64a4634a99c737b251b6f94cba7625c01755b0db4cb62280bebe49c898f7
-  rodauth (2.43.0) sha256=4dc5f5c6b8013502352beb342f72b64515680af2f95603f7248031fd9203984a
+  rodauth (2.44.0) sha256=4d00ec73d65c52fe6915b797dce172ed060109bc3a00e2ff8ab08c4f5370dd77
   rom (5.4.3) sha256=dc8925ba216e9635651edbbb1b4ddc0f145782a100e78458434e5f0aacfec2c8
   rom-changeset (5.4.0) sha256=503b9d2ad082743a28c06da70d431c7f12c18c4c0bca7f90c66d5aa2e13db898
   rom-core (5.4.0) sha256=a08264e40892cf86a57e32f6c09803b30e4fb3b1da86a64d41e71d92575df08f
