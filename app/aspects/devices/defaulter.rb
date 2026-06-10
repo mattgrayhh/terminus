@@ -14,10 +14,8 @@ module Terminus
 
         def call
           {
-            api_key: randomizer.alphanumeric(20),
             mac_address: mac_address_builder.call,
             firmware_update: true,
-            friendly_id: randomizer.hex(3).upcase,
             image_timeout: 0,
             label: "TRMNL",
             refresh_rate: 900

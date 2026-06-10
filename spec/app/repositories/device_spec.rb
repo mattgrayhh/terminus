@@ -40,7 +40,7 @@ RSpec.describe Terminus::Repositories::Device, :db do
     end
 
     it "answers record when found by multiple attributes" do
-      record = repository.find_by(label: device.label, friendly_id: device.friendly_id)
+      record = repository.find_by(label: device.label, mac_address: device.mac_address)
                          .to_h
                          .tap { it.delete :playlist }
 
@@ -98,9 +98,9 @@ RSpec.describe Terminus::Repositories::Device, :db do
       device
       update = repository.update_by_mac_address device.mac_address,
                                                 label: "Update",
-                                                friendly_id: "ABCDEF"
+                                                mac_address: "5E:E1:DD:6F:7F:82"
 
-      expect(update).to have_attributes(label: "Update", friendly_id: "ABCDEF")
+      expect(update).to have_attributes(label: "Update", mac_address: "5E:E1:DD:6F:7F:82")
     end
 
     it "answers record without updates for no attributes" do

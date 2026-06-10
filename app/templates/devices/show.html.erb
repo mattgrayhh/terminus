@@ -44,22 +44,10 @@
         </dd>
 
         <dt class="key">
-          Friendly ID
-          <%= render "shared/popovers/triggers/default", name: :friendly_id %>
-        </dt>
-        <dd class="value"><%= device.friendly_id %></dd>
-
-        <dt class="key">
           MAC Address
           <%= render "shared/popovers/triggers/default", name: :mac_address %>
         </dt>
         <dd class="value bit-secret"><%= device.mac_address %></dd>
-
-        <dt class="key">
-          API Key
-          <%= render "shared/popovers/triggers/default", name: :api_key %>
-        </dt>
-        <dd class="value bit-secret"><%= device.api_key %></dd>
 
         <dt class="key">
           Refresh Rate

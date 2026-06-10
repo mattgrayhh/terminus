@@ -13,7 +13,6 @@ RSpec.describe Terminus::Actions::API::Log::Create, :db do
       {
         "HTTP_BASE64" => "true",
         "HTTP_FW_VERSION" => "0.0.0",
-        "HTTP_ACCESS_TOKEN" => "abc123",
         "HTTP_HEIGHT" => 480,
         "HTTP_HOST" => "test.io",
         "HTTP_ID" => device.mac_address,

@@ -30,19 +30,6 @@
                         autocomplete: :off %>
   <% end %>
 
-  <%= scope(:form_field, key: :friendly_id, errors:).render do %>
-    <label class="key" for="device_friendly_id">
-      Friendly ID
-      <%= render "shared/popovers/triggers/default", name: :friendly_id %>
-    </label>
-
-    <%= form.text_field :friendly_id,
-                        id: :device_friendly_id,
-                        value: field_for(:friendly_id, fields, device),
-                        class: :value,
-                        autocomplete: :off %>
-  <% end %>
-
   <%= scope(:form_field, key: :mac_address, errors:).render do %>
     <label class="key" for="device_mac_address">
       MAC Address
@@ -53,24 +40,6 @@
       <%= form.text_field :mac_address,
                           id: :device_mac_address,
                           value: field_for(:mac_address, fields, device),
-                          class: "value value-cap",
-                          autocomplete: :off,
-                          "x-bind:type" => "show ? 'text' : 'password'"%>
-
-      <%= render "shared/visibility_button" %>
-    </div>
-  <% end %>
-
-  <%= scope(:form_field, key: :api_key, errors:).render do %>
-    <label class="key" for="device_api_key">
-      API Key
-      <%= render "shared/popovers/triggers/default", name: :api_key %>
-    </label>
-
-    <div class="input-group" x-data="{ show: false }">
-      <%= form.text_field :api_key,
-                          id: :device_api_key,
-                          value: field_for(:api_key, fields, device),
                           class: "value value-cap",
                           autocomplete: :off,
                           "x-bind:type" => "show ? 'text' : 'password'"%>

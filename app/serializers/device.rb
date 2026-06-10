@@ -9,10 +9,8 @@ module Terminus
         id
         model_id
         playlist_id
-        friendly_id
         label
         mac_address
-        api_key
         firmware_profile
         firmware_update
         firmware_version

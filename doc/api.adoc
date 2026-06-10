@@ -37,7 +37,6 @@ curl "https://localhost:2443/api/display" \
 
 The {trmnl_firmware_link} will include the following headers in each HTTP request. All are optional except for the `ID` header. Here's the full list:
 
-* `ACCESS_TOKEN`: The API key (or an empty string if not present).
 * `BATTERY_CAPACITY`: Ratio of current and max battery capacity. Example: `11300/11420`.
 * `BATTERY_CHARGING`: Boolean for if the battery is charging or not. Example: `0` or `1`.
 * `BATTERY_COUNT`: The number batteries avaiable. Example: `2`.
@@ -153,8 +152,6 @@ curl "https://localhost:2443/api/setup/" \
 [source,json]
 ----
 {
-  "api_key": "<redacted>",
-  "friendly_id": "ABC123",
   "image_url": "https://localhost:2443/assets/setup.bmp",
   "message": "Welcome to TRMNL BYOS"
 }
@@ -264,10 +261,8 @@ curl "https://localhost:2443/api/devices/1" \
       "id": 1,
       "model_id": 11,
       "playlist_id": 1,
-      "friendly_id": "DEMO11",
       "label": "Demo",
       "mac_address": "02:A1:B2:C3:D4:E5",
-      "api_key": "OScdcN0kFbKjFcid9Kz6Cx",
       "firmware_profile": true,
       "firmware_update": true,
       "firmware_version": "1.8.6",
@@ -301,10 +296,8 @@ curl "https://localhost:2443/api/devices/1" \
     "id": 1,
     "model_id": 11,
     "playlist_id": 1,
-    "friendly_id": "DEMO11",
     "label": "Demo",
     "mac_address": "02:A1:B2:C3:D4:E5",
-    "api_key": "OScdcN0kFbKjFcid9Kz6Cx",
     "firmware_profile": true,
     "firmware_update": true,
     "firmware_version": "1.8.6",
@@ -362,10 +355,8 @@ curl -X "POST" "https://localhost:2443/api/devices" \
   "device": {
     "model_id": 11,
     "playlist_id": 1,
-    "friendly_id": "DEMO11",
     "label": "Demo",
     "mac_address": "02:A1:B2:C3:D4:E5",
-    "api_key": "OScdcN0kFbKjFcid9Kz6Cx",
     "firmware_profile": true,
     "firmware_update": true,
     "firmware_version": "1.8.6",
@@ -408,10 +399,8 @@ curl -X "POST" "https://localhost:2443/api/devices" \
     "id": 1,
     "model_id": 11,
     "playlist_id": 1,
-    "friendly_id": "DEMO11",
     "label": "Demo",
     "mac_address": "02:A1:B2:C3:D4:E5",
-    "api_key": "OScdcN0kFbKjFcid9Kz6Cx",
     "firmware_profile": true,
     "firmware_update": true,
     "firmware_version": "1.8.6",
@@ -470,10 +459,8 @@ You can change a single attribute or multiple attributes at once. All attributes
     "id": 1,
     "model_id": 11,
     "playlist_id": 1,
-    "friendly_id": "DEMO11",
     "label": "Demo",
     "mac_address": "02:A1:B2:C3:D4:E5",
-    "api_key": "OScdcN0kFbKjFcid9Kz6Cx",
     "firmware_profile": true,
     "firmware_update": true,
     "firmware_version": "1.8.6",
@@ -524,10 +511,8 @@ curl -X "DELETE" "https://localhost:2443/api/devices/1" \
     "id": 1,
     "model_id": 11,
     "playlist_id": 1,
-    "friendly_id": "DEMO11",
     "label": "Demo",
     "mac_address": "02:A1:B2:C3:D4:E5",
-    "api_key": "OScdcN0kFbKjFcid9Kz6Cx",
     "firmware_profile": true,
     "firmware_update": true,
     "firmware_version": "1.8.6",

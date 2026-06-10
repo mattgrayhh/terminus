@@ -26,13 +26,7 @@ module Terminus
       attr_reader :environment, :resolver, :id
 
       def add_filters
-        cogger.add_filters :api_key,
-                           :csrf,
-                           :HTTP_ACCESS_TOKEN,
-                           :HTTP_ID,
-                           :mac_address,
-                           :password,
-                           :password_confirmation
+        cogger.add_filters :csrf, :HTTP_ID, :mac_address, :password, :password_confirmation
       end
 
       def build_instance

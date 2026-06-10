@@ -8,10 +8,8 @@ RSpec.describe Terminus::Aspects::Devices::Defaulter do
   describe "#call" do
     it "answers random defaults" do
       expect(builder.call).to match(
-        api_key: match_device_api_key,
         mac_address: match_mac_address,
         firmware_update: true,
-        friendly_id: match_device_friendly_id,
         image_timeout: 0,
         label: "TRMNL",
         refresh_rate: 900
@@ -24,10 +22,8 @@ RSpec.describe Terminus::Aspects::Devices::Defaulter do
       builder = described_class.new(randomizer:, mac_address_builder:)
 
       expect(builder.call).to eq(
-        api_key: "Ov2tWq4XoYCH2xPfiZqc",
         mac_address: "02:A1:B2:C3:D4:E5",
         firmware_update: true,
-        friendly_id: "ABC123",
         image_timeout: 0,
         label: "TRMNL",
         refresh_rate: 900

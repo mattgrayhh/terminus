@@ -36,15 +36,11 @@ module Terminus
                                                                              :model_name
 
             provisioner.call(model_id: find_model_id(model_name), mac_address:, firmware_version:)
-                       .either -> device { render_success device, response },
+                       .either proc { response.with body: payload.welcome.to_json },
                                -> error { not_found error, response }
           end
 
           def find_model_id(name) = model_repository.find_by(name:).then { it.id if it }
-
-          def render_success device, response
-            response.body = payload.for(device).to_json
-          end
 
           def not_found error, response
             payload = petail[
