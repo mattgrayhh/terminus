@@ -172,14 +172,14 @@ GEM
       et-orbi (~> 1.4)
       raabro (~> 1.4)
     functionable (1.2.0)
-    git-lint (11.0.1)
+    git-lint (11.1.0)
       cogger (~> 2.3)
       containable (~> 2.3)
       core (~> 3.0)
       dry-monads (~> 1.9)
       dry-schema (~> 1.15)
       etcher (~> 4.3)
-      gitt (~> 5.3)
+      gitt (~> 5.4)
       infusible (~> 5.0)
       refinements (~> 14.0)
       runcom (~> 13.0)
@@ -187,7 +187,7 @@ GEM
       spek (~> 5.0)
       tone (~> 3.0)
       zeitwerk (~> 2.8)
-    gitt (5.3.0)
+    gitt (5.4.0)
       core (~> 3.0)
       dry-monads (~> 1.9)
       refinements (~> 14.0)
@@ -274,7 +274,7 @@ GEM
     irb-kit (2.2.0)
       irb (~> 1.16)
       zeitwerk (~> 2.7)
-    json (2.19.8)
+    json (2.19.9)
     jwt (3.2.0)
       base64
     language_server-protocol (3.17.0.5)
@@ -725,8 +725,8 @@ CHECKSUMS
   fiber-storage (1.0.1) sha256=f48e5b6d8b0be96dac486332b55cee82240057065dc761c1ea692b2e719240e1
   fugit (1.12.2) sha256=643f2bf28db263bd400cbf8e0dd8b76b2c9b94bdb130e12d2394de04d9c20e5e
   functionable (1.2.0) sha256=76e9ddd98994b61dfef6cf3d9366eb4202101abed562363f6c30500fd62668da
-  git-lint (11.0.1) sha256=4097ae4d66c4f8a30a9a0bcfbaff7d9ccdb525b3cd332223b5dd6ee0daec0e9b
-  gitt (5.3.0) sha256=f084d19d00b61231aaba2f2f85c063b10a96da1f7e48f4233cef09e9048e4a43
+  git-lint (11.1.0) sha256=b7a8e8d7b6b2808e69f626fd505145f609d77abc9ad689bf4f49be62d981c257
+  gitt (5.4.0) sha256=1aaa2fd73d52bcf00a87bd715df2c746529722e1eefe40aee7945cd3fb692df5
   hanami (2.3.2) sha256=2f1e7e10d760bd0c3929bcb55a42f38281bd5da507e40b98e62282f52f452e3b
   hanami-assets (2.3.0) sha256=c396bb735833458d0ceda013f498154eccafcae50c36db7f27cdd50f0560223d
   hanami-cli (2.3.5) sha256=213fc8181e566930821d830eae335b22e93c3e5018f4f22d0c13792d1e76f05e
@@ -749,7 +749,7 @@ CHECKSUMS
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   irb (1.18.0) sha256=de9454a0703a54704b9811a5ef31a60c86949fbf4013fcf244fabc7c775248e3
   irb-kit (2.2.0) sha256=aa81c2f2442c39c435c0818b68aa163d3e99a05bda51fac20188e486ba737032
-  json (2.19.8) sha256=6354310fd76ef69b87d5bd1f38b40d730613baf90b6803d2d0a48f618d32dfaa
+  json (2.19.9) sha256=9b9025b7cdddafa38d316eca0b2358488e42d417045c1b90d216a9fefe46b79a
   jwt (3.2.0) sha256=5419b1fe37b1da0982bd07051f573a8b8789ab724c2aa7e785e4784a3ed217d7
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   launchy (3.1.1) sha256=72b847b5cc961589dde2c395af0108c86ff0119f42d4648d25b5440ebb10059e
