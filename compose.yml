@@ -27,6 +27,8 @@ services:
     restart: unless-stopped
     volumes:
       - certificates:/etc/ssl/certs
+      - web-fonts:/app/public/fonts
+      - web-fonts:/usr/share/fonts/terminus
       - web-uploads:/app/public/uploads
     depends_on:
       init-certificates:
@@ -60,6 +62,8 @@ services:
     restart: unless-stopped
     volumes:
       - certificates:/etc/ssl/certs
+      - web-fonts:/app/public/fonts
+      - web-fonts:/usr/share/fonts/terminus
       - web-uploads:/app/public/uploads
     depends_on:
       web:
@@ -127,5 +131,6 @@ services:
 volumes:
   database-data:
   keyvalue-data:
+  web-fonts:
   web-uploads:
   certificates:
