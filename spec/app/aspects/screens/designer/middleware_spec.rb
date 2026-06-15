@@ -8,9 +8,14 @@ RSpec.describe Terminus::Aspects::Screens::Designer::Middleware do
   let(:application) { proc { [200, {}, []] } }
 
   describe "#call" do
-    it "answers event stream when path matches" do
-      environment = Rack::MockRequest.env_for "/preview/test", method: :get
+    let :environment do
+      Rack::MockRequest.env_for(path, method: :get)
+                       .tap { it["rack.session.options"] = {skip: false} }
+    end
 
+    let(:path) { +"/preview/test" }
+
+    it "answers event stream when path matches" do
       expect(middleware.call(environment)).to match(
         array_including(
           200,
@@ -28,24 +33,30 @@ RSpec.describe Terminus::Aspects::Screens::Designer::Middleware do
 
     it "passes name to event stream" do
       event_stream = class_spy Terminus::Aspects::Screens::Designer::EventStream
+
       middleware = described_class.new(
         application,
         pattern: %r(/preview/(?<name>.+)),
         event_stream:
       )
-      environment = Rack::MockRequest.env_for "/preview/test", method: :get
+
       middleware.call environment
 
       expect(event_stream).to have_received(:new).with("test")
     end
 
+    it "updates session options to be skipped" do
+      middleware.call environment
+      expect(environment.dig("rack.session.options", :skip)).to be(true)
+    end
+
     it "answers original response when path doesn't match" do
-      environment = Rack::MockRequest.env_for "/bogus", method: :get
+      path.replace "/bogus"
       expect(middleware.call(environment)).to eq([200, {}, []])
     end
 
     it "answers original response when verb doesn't match" do
-      environment = Rack::MockRequest.env_for "/test/1/example", method: :put
+      path.replace "/test/1/example"
       expect(middleware.call(environment)).to eq([200, {}, []])
     end
   end

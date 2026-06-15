@@ -29,7 +29,9 @@ module Terminus
             path = request.path
 
             case path.match pattern
-              in name: then [200, headers, event_stream.new(name)]
+              in name:
+                environment["rack.session.options"][:skip] = true
+                [200, headers, event_stream.new(name)]
               else application.call environment
             end
           end
