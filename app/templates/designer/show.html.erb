@@ -14,27 +14,33 @@
     <p>Use the text area to design custom screens for your device using pure HTML/CSS. Changes are applied automatically as you make edits and saved as a screen which you can view via the <%= link_to "Screens", routes.path(:screens) %> page.</p>
   <% end %>
 
-  <div class="designer">
-    <figure class="device"
-            hx-ext="sse"
-            sse-connect="/preview/<%= name %>"
-            sse-swap="preview">
-      <%= image_tag "loader.svg", alt: "Loader", width: 800, height: 480 %>
+  <div class="bit-body">
+    <figure class="device" hx-ext="sse" sse-connect="/preview/<%= name %>" sse-swap="preview">
+      <%= render :loader %>
     </figure>
 
-    <%= form_for :template, routes.path(:designer), class: :form do |form| %>
-      <%= form.hidden_field :name, value: name %>
-      <%= form.hidden_field :label, value: label %>
+    <div class="bit-card">
+      <%= form_for :template, routes.path(:designer), class: "bit-form" do |form| %>
+        <%= form.hidden_field :name, value: name %>
+        <%= form.hidden_field :label, value: label %>
 
-      <%= form.text_area :content,
-                         render(:welcome),
-                         class: :source,
-                         autocomplete: :off,
-                         **HTMX[
-                           post: routes.path(:designer),
-                           trigger: "load, keyup delay:200ms",
-                           swap: "textContent"
-                         ] %>
-    <% end %>
+        <%= form.text_area :content,
+                           render(:welcome),
+                           class: "source bit-editor",
+                           autocomplete: :off,
+                           data: {language: :liquid} %>
+
+        <div class="form-actions">
+          <%= form.submit "Save",
+                          class: "bit-button-accept",
+                          **HTMX[
+                            post: routes.path(:designer),
+                            trigger: "load, click, keyup[ctrlKey&&key=='s'] from:body",
+                            swap: :none,
+                            disabled_elt: "this"
+                          ] %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </section>
