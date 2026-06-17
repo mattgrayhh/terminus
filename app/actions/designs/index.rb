@@ -5,7 +5,9 @@ module Terminus
     module Designs
       # The index action.
       class Index < Action
-        def handle(*, response) = response.render view
+        include Deps[template_repository: "repositories.screen_template"]
+
+        def handle(*, response) = response.render view, templates: template_repository.all
       end
     end
   end
