@@ -252,7 +252,11 @@ While this project is distributed under the permissive link:/LICENSE.adoc[MIT Li
 
 == link:https://alchemists.io/community[Community]
 
+== Survey
+
+We'd love to learn more about how you use Terminus and welcome you to link:https://docs.google.com/forms/d/1FLVa9I1u6wk6ExMYj-l9P9a_Kw7XGXCPPyC0SSvv3hs/viewform[take our survey]. It's short and would help us serve your better. Thanks. 🙇🏻
+
 == Credits
 
 * Built with link:https://alchemists.io/projects/hanamismith[Hanamismith].
-* Engineered by {trmnl_link}.
+* Engineered by link:https://alchemists.io/team/brooke_kuhlmann[Brooke Kuhlmann]
