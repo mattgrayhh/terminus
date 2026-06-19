@@ -45,7 +45,7 @@ The {trmnl_firmware_link} will include the following headers in each HTTP reques
 * `BATTERY_TEMP`: The battery temperature in Celsius. Range: `-1` to infinity.
 * `BATTERY_VOLTAGE`: The remaining battery level. This is a float (usually 0.0 to 4.1).
 * `FW_VERSION`: The firmware version (i.e. `1.2.3`).
-* `HEIGHT`: :The device height. Example: 480.
+* `HEIGHT`: The device height. Example: 480.
 * `HOST`: The host (usually the IP address).
 * `ID`: The MAC address of the device.
 * `IMAGE_CACHED`: Boolean for if the image is cached on the device or not.
@@ -54,7 +54,7 @@ The {trmnl_firmware_link} will include the following headers in each HTTP reques
 * `REFRESH_RATE`: The current refresh rate as saved on the device. Example: 100.
 * `RSSI`: The WiFi signal strength (usually -100 to 100).
 * `SENSORS`: The sensor reasons for any sensors connected to the device.
-* `TEMPERATURE_PROFILE`:
+* `TEMPERATURE_PROFILE`: The current profile applied for altering display behavior.
 * `UPDATE_SOURCE`: The reason for why the device was woken from sleep.
 * `USB_CONNECTED`: Boolean for if the USB power cable is connected or not.
 * `WAKE_TIME`: The number of seconds the device was awake during the last cycle.
